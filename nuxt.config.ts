@@ -3,9 +3,7 @@ import en from './locales/en.json';
 import ru from './locales/ru.json';
 
 export default defineNuxtConfig({
-  router: {
-    base: '/app/',
-  },
+  ssr: false,
   components: false,
   imports: {
     autoImport: false
