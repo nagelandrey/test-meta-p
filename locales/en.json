@@ -1,0 +1,25 @@
+{
+    "locales": {
+        "ru": "RU",
+        "en": "EN"
+    },
+    "menu": {
+        "main": "Main",
+        "ecosystem": "Ecosystem",
+        "roadmap": "Roadmap",
+        "whitepaper": "Whitepaper",
+        "buy": "Buy",
+        "faq": "FAQ"
+    },
+    "timer": {
+        "days": "days",
+        "hours": "hours",
+        "minutes": "minutes",
+        "seconds": "seconds"
+    },
+    "section": {
+        "home": {
+            "mainDescription": "---"
+        }
+    }
+}

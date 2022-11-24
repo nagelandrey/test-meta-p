@@ -1,0 +1,26 @@
+{
+    "locales": {
+        "ru": "RU",
+        "en": "EN"
+    },
+    "menu": {
+        "main": "Главная",
+        "ecosystem": "Экосистема",
+        "roadmap": "Роадмап",
+        "whitepaper": "Вайтпепер",
+        "buy": "Купить",
+        "faq": "FAQ"
+    },
+    "timer": {
+        "days": "дня",
+        "hours": "часов",
+        "minutes": "минут",
+        "seconds": "секунд"
+    },
+    "section": {
+        "home": {
+            "mainDescriptionGrab": "Хватайте свои покеболы и ловите иксы.",
+            "mainDescriptionLeft": "До листинга токена MetaPokemon осталось:"
+        }
+    }
+}

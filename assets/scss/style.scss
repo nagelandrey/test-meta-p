@@ -1,0 +1,122 @@
+$large-width: 1008px;
+$medium-width: 640px;
+
+@font-face {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: bold;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/Montserrat-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: light;
+    font-weight: 200;
+    font-display: swap;
+    src: url('/fonts/Montserrat-Light.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.header {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background: #000000;
+    z-index: 200;
+}
+
+.container {
+    max-width: 1600px;
+}
+
+.header-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 21px;
+}
+
+.navigation-logo-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 124px 0 0;
+    padding: 30px 0 20px;
+}
+
+.navigation-logo-wrapper .logo-pokemon-name {
+    height: 80px;
+    object-fit: contain;
+}
+
+.navigation-logo-wrapper .logo-pokemon-image {
+    width: 80px;
+    margin-right: 20px;
+    object-fit: contain;
+}
+
+.navigation-items {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    gap: 50px;
+}
+
+.navigation-item {
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-item .link {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.navigation-item .link:visited,
+.navigation-item .link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.navigation-item .social-icon {
+    width: 45px;
+    height: 45px;
+}
+
+@media screen and (max-width: $large-width) {
+    
+}
+
+@media screen and (max-width: $medium-width) {
+    
+}
