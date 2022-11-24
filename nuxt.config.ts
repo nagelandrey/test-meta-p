@@ -3,7 +3,9 @@ import en from './locales/en.json';
 import ru from './locales/ru.json';
 
 export default defineNuxtConfig({
-  ssr: false,
+  router: {
+    base: '/test-meta-p/'
+  },
   components: false,
   imports: {
     autoImport: false
