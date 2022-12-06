@@ -3,6 +3,10 @@
         "ru": "RU",
         "en": "EN"
     },
+    "link": {
+        "telegram": "https://t.me/meta_pokemon",
+        "twitter": ""
+    },
     "menu": {
         "main": "Main",
         "ecosystem": "Ecosystem",
@@ -17,9 +21,78 @@
         "minutes": "minutes",
         "seconds": "seconds"
     },
+    "footer": {
+        "text": "FREEDOM LIES IN BEING BOLD"
+    },
     "section": {
         "home": {
-            "mainDescription": "---"
+            "mainDescriptionGrab": "Grab your pokeballs and catch the X's.",
+            "mainDescriptionLeft": "MetaPokemon token listing is still to come:",
+            "mainDescriptionSmall": "Grab your pokeballs and catch the X's. Token listing is still to come:"
+        },
+        "mainInfo": {
+            "header": "What is a Pokemon token",
+            "anime": "Your favorite anime in WEB3 space. Pokémon are moving into the meta universe! We've combined the power of the elements with the real benefits of blockchain to create a space for true fans.",
+            "features": "A P2E game, Pokemon Coin, NFT collection of 3D characters and all in a package and a meta universe awaits you!"
+        },
+        "moon": {
+            "send": "Let's send",
+            "pokemons": "Pokemons",
+            "toMoon": "to the moon",
+            "together": "together"
+        },
+        "faq": {
+            "header": "F.A.Q.",
+            "first": {
+                "button": "Who we are",
+                "text": "Create a unique ecosystem with the Pokemon Token at its heart"
+            },
+            "second": {
+                "button": "Our mission",
+                "text": "A cryptocurrency movement dedicated to the legendary multiverse. Pokemon Token is a friendly community where everyone is welcome"
+            }
+        },
+        "ecosystem": {
+            "header": "Экосистема",
+            "game": {
+                "header": "Игры:",
+                "first": "Play-to-earn проект Pokemon Fighters",
+                "second": "Игровая метавселенная Pokemon Adventure"
+            },
+            "community": {
+                "header": "Сообщество:",
+                "first": "Инкубаторные программы ",
+                "second": "Благотворительность",
+                "third": "Фандрайзеры"
+            },
+            "marketplaces": {
+                "header": "Маркетплейсы:",
+                "first": "PokemonVerse - NFTs",
+                "second": "PokemonSwap - Dex"
+            }
+        },
+        "roadmap": {
+            "header": "Road map",
+            "first": {
+                "1": "Launch marketing campaigns",
+                "2": "Joining a large community",
+                "3": "Listing on DEX"
+            },
+            "second": {
+                "1": "Mint NFT 3D characters",
+                "2": "Collaborations with celebrities",
+                "3": "Launch of NFT Marketplace"
+            },
+            "third": {
+                "1": "CEX listing",
+                "2": "Launch of the first version of GameFi",
+                "3": "Global Game Tournament"
+            },
+            "fourth": {
+                "1": "Creating a meta universe",
+                "2": "Offline events in 10 cities",
+                "3": "Gas pedal program launch"
+            }
         }
     }
 }

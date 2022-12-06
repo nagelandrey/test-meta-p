@@ -3,12 +3,14 @@ import en from './locales/en.json';
 import ru from './locales/ru.json';
 
 export default defineNuxtConfig({
-  router: {
-    base: '/test-meta-p/'
-  },
   components: false,
   imports: {
     autoImport: false
+  },
+  app: {
+    head: {
+      title: 'Pokemon token',
+    },
   },
   css: [
     '@/assets/scss/style.scss'
@@ -30,5 +32,5 @@ export default defineNuxtConfig({
     plugins: [
       eslintPlugin()
     ]
-  }
+  },
 })

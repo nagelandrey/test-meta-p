@@ -1,5 +1,5 @@
 <template>
-  <section class="section-home home-wrapper">
+  <section class="home-wrapper">
     <img
       src="/img/pokeball.webp"
       alt=""
@@ -16,6 +16,9 @@
       </p>
       <p class="home-description">
         {{ $t('section.home.mainDescriptionLeft') }}
+      </p>
+      <p class="home-description-small">
+        {{ $t('section.home.mainDescriptionSmall') }}
       </p>
     </div>
     <img
@@ -46,37 +49,42 @@ $pokeball-animation-margin: 45px;
 .home-wrapper {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  background: url('/img/main-background-space.webp') center no-repeat;
+  background: url('/img/main-background-space-blur.webp') center no-repeat, #151729;
   background-size: cover;
-  padding-bottom: calc($timer-offset + 10px);
-}
-.pokeball {
+  padding-bottom: calc($timer-offset + 30px);
+  overflow: hidden;
+  --top-offset: 200px;
   margin-top: 100px;
+}
+.home-wrapper .pokeball { 
+  position: absolute;
   transform: translate(80px, -100px);
 }
 .pokeball.left {
+  left: 0;
   animation: pokeballLeft 1s ease-in-out alternate infinite;
 }
 .pokeball.right {
+  right: 0;
   transform:  translate(-80px, 80px) rotate(35deg) scale(-1, 1);
   animation: pokeballRight 1s 0.2s ease-in-out alternate infinite;
 }
 @keyframes pokeballLeft {
   0% {
-    margin-bottom: -$pokeball-animation-margin;
+    top: calc(var(--top-offset) - $pokeball-animation-margin);
   }
   100% {
-    margin-bottom: $pokeball-animation-margin;
+    top: calc($pokeball-animation-margin + var(--top-offset));
   }
 }
 @keyframes pokeballRight {
   0% {
-    margin-bottom: $pokeball-animation-margin;
+    top: calc($pokeball-animation-margin + var(--top-offset));
   }
   100% {
-    margin-bottom: -$pokeball-animation-margin;
+    top: calc(var(--top-offset) - $pokeball-animation-margin);
   }
 }
 .front-position {
@@ -85,7 +93,7 @@ $pokeball-animation-margin: 45px;
 }
 .logo {
   max-width: 900px;
-  margin: 54px 0 0;
+  margin: 54px 0 10px;
   object-fit: contain;
 }
 .main-content {
@@ -93,13 +101,71 @@ $pokeball-animation-margin: 45px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 200;
 }
+.home-description-small,
 .home-description {
   padding: 0;
   margin: 0;
   color: #FFFFFF;
-  font-size: 50px;
+  font-size: 43px;
   max-width: 1200px;
   text-align: center;
 }
+.home-description-small {
+  display: none;
+}
+@media screen and (max-width: 1550px) {
+
+  .logo {
+    max-width: 750px;
+  }
+  .home-wrapper .pokeball {
+    --top-offset: 150px;
+    width: 220px;
+    height: 220px;
+  }
+  .home-description {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 1110px) {
+  .pokeball {
+    display: none;
+  }
+}
+@media screen and (max-width: 788px) {
+  .home-wrapper {
+    margin-top: 40px;
+  }
+  .pokeball {
+    display: none;
+  }
+  .home-description {
+    display: none;
+  }
+  .home-description-small {
+    display: block;
+    font-size: 30px;
+    max-width: 550px;
+    margin: 0 15px;
+    width: 100%;
+  }
+  .logo {
+    width: 100%;
+    height: auto;
+    margin: 20px -30px 10px -30px;
+  }
+} 
+@media screen and (max-width: 550px) {
+  .home-description-small {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .home-description-small {
+    font-size: 16px;
+  }
+}
+
 </style>

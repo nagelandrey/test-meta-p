@@ -7,19 +7,14 @@
       >
         <img
           class="logo-pokemon-image"
-          src="/img/logo-pokemon-image.webp"
-          alt=""
-        >
-        <img
-          class="logo-pokemon-name"
-          src="/img/logo-pokemon-name.webp"
+          src="/img/header-logo.webp"
           alt=""
         >
       </a>
       <ul class="navigation-items">
         <li class="navigation-item">
           <a
-            href=""
+            href="#"
             class="link"
           >
             {{ $t('menu.main') }}
@@ -27,7 +22,7 @@
         </li>
         <li class="navigation-item">
           <a
-            href=""
+            href="#ecosystem"
             class="link"
           >
             {{ $t('menu.ecosystem') }}
@@ -35,7 +30,7 @@
         </li>
         <li class="navigation-item">
           <a
-            href=""
+            href="#roadmap"
             class="link"
           >
             {{ $t('menu.roadmap') }}
@@ -43,15 +38,16 @@
         </li>
         <li class="navigation-item">
           <a
-            href=""
+            href="/whitepaper.pdf"
             class="link"
+            target="_blank"
           >
             {{ $t('menu.whitepaper') }}
           </a>
         </li>
         <li class="navigation-item">
           <a
-            href=""
+            href="#buy"
             class="link"
           >
             {{ $t('menu.buy') }}
@@ -59,7 +55,7 @@
         </li>
         <li class="navigation-item">
           <a
-            href=""
+            href="#faq"
             class="link"
           >
             {{ $t('menu.faq') }}
@@ -67,34 +63,122 @@
         </li>
         <li class="navigation-item social-links">
           <a
-            href="https://t.me/123"
+            :href="$t('link.telegram')"
             class="link"
           >
             <img
-              src="/img/telegram-icon.svg"
-              alt="telegram channel"
+              src="/img/icon-telegram.png"
+              alt=""
               class="social-icon"
             >
           </a>
-          <a
-            href="https://twitter.com/123"
+          <!-- <a
+            href="https://twitter.com/"
             class="link"
           >
             <img
-              src="/img/twitter-icon.svg"
-              alt="telegram channel"
+              src="/img/icon-twitter.png"
+              alt=""
               class="social-icon"
             >
-          </a>
+          </a> -->
         </li>
         <li class="navigation-item select-language">
           <LanguageSelect />
         </li>
+        <div
+          class="burger"
+          @click="showMenu"
+        >
+          <div class="burger-line" />
+          <div class="burger-line" />
+          <div class="burger-line" />
+        </div>
+        <div
+          v-show="isMenuOpened"
+          class="burger-menu"
+        >
+          <a
+            href="#"
+            class="link"
+          >
+            {{ $t('menu.main') }}
+          </a>
+          <a
+            href="#ecosystem"
+            class="link"
+          >
+            {{ $t('menu.ecosystem') }}
+          </a>
+          <a
+            href="#roadmap"
+            class="link"
+          >
+            {{ $t('menu.roadmap') }}
+          </a>
+          <a
+            href="/whitepaper.pdf"
+            class="link"
+          >
+            {{ $t('menu.whitepaper') }}
+          </a>
+          <a
+            href="#faq"
+            class="link"
+          >
+            {{ $t('menu.faq') }}
+          </a>
+        </div>
       </ul>
     </nav>
   </header>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import LanguageSelect from '~/components/LanguageSelect.vue'
+
+const isMenuOpened = ref(false);
+
+const showMenu = () => {
+  isMenuOpened.value = !isMenuOpened.value;
+}
 </script>
+
+<style scoped>
+.burger {
+  display: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.burger-line {
+  width: 30px;
+  height: 2px;
+  margin: 8px 0;
+  background: #FFFFFF;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+.burger-menu {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.4);
+}
+.burger-menu .link {
+  color: #FFFFFF;
+  padding: 10px 40px 10px;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 1120px) {
+  .burger {
+    display: block;
+  }
+}
+</style>
