@@ -1,5 +1,4 @@
 <template>
-  <TheHeader />
   <div class="error-wrapper">
     <img
       src="/img/pikachu-not-found.png"

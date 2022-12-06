@@ -7,6 +7,9 @@ export default defineNuxtConfig({
   imports: {
     autoImport: false
   },
+  build: {
+    transpile: ['swiper']
+  },
   app: {
     head: {
       title: 'Pokemon token',

@@ -1,3 +1,23 @@
+<script setup lang="ts">
+// core version + navigation, pagination modules:
+
+import {Navigation} from 'swiper';
+import {Swiper, SwiperSlide, useSwiper} from 'swiper/vue';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+const currentSwiper = useSwiper();
+
+const toLeft = () => {
+  currentSwiper.value.slidePrev()
+}
+
+const toRight = () => {
+  currentSwiper.value.slideNext()
+}
+</script>
+
 <template>
   <section
     id="roadmap"
@@ -11,6 +31,98 @@
     <h2 class="section-header">
       {{ $t('section.roadmap.header') }}
     </h2>
+    <div class="swiper-container-mobile">
+      <swiper
+        :slides-per-view="2"
+        :space-between="50"
+      >
+        <swiper-slide>
+          <div class="slide-container-mobile">
+            <div class="text">
+              <div class="badge">
+                Q4 2022
+              </div>
+              <p class="text-item">
+                {{ $t('section.roadmap.first.1') }}
+                <br>
+                <br>
+                {{ $t('section.roadmap.first.2') }}
+                <br>
+                <br>
+                {{ $t('section.roadmap.first.3') }}
+              </p>
+            </div>
+            <img
+              src="/img/roadmap-psyduck.webp"
+              alt=""
+              class="pokemon"
+            >
+          </div>
+        </swiper-slide>
+        <swiper-slide>
+          <div class="text">
+            <div class="badge">
+              Q1 2023
+            </div>
+            <p class="text-item">
+              {{ $t('section.roadmap.second.1') }}
+              <br>
+              <br>
+              {{ $t('section.roadmap.second.2') }}
+              <br>
+              <br>
+              {{ $t('section.roadmap.second.3') }}
+            </p>
+          </div>
+          <img
+            src="/img/pokemon-ekans.webp"
+            alt=""
+            class="pokemon"
+          >
+        </swiper-slide>
+        <swiper-slide>
+          <div class="text">
+            <div class="badge">
+              Q2 - Q3 2023
+            </div>
+            <p class="text-item">
+              {{ $t('section.roadmap.third.1') }}
+              <br><br>
+              {{ $t('section.roadmap.third.2') }}
+              <br><br>
+              {{ $t('section.roadmap.third.3') }}
+            </p>
+          </div>
+          <img
+            src="/img/pokemon-ditto.webp"
+            alt=""
+            class="pokemon"
+          >
+        </swiper-slide>
+        <swiper-slide>
+          <div class="text">
+            <div class="badge">
+              Q4 2023 >
+            </div>
+            <p class="text-item">
+              {{ $t('section.roadmap.fourth.1') }}
+              <br><br>
+              {{ $t('section.roadmap.fourth.2') }}
+              <br><br>
+              {{ $t('section.roadmap.fourth.3') }}
+            </p>
+          </div>
+          <img
+            src="/img/pokemon-squirtle.webp"
+            alt=""
+            class="pokemon"
+          >
+        </swiper-slide>
+      </swiper>
+      <button @click="toLeft" class="arrow to-left"><div class="arrow-inner"></div></button>
+      <button @click="toRight" class="arrow to-right"><div class="arrow-inner"></div></button>
+    </div>
+
     <div class="rows">
       <div class="first">
         <div class="text">
@@ -108,7 +220,7 @@
             {{ $t('section.roadmap.fourth.2') }}
             <br><br>
             {{ $t('section.roadmap.fourth.3') }}
-          </p> 
+          </p>
         </div>
       </div>
     </div>
@@ -116,12 +228,46 @@
 </template>
 
 <style scoped>
+.arrow {
+  position: absolute;
+  top: 50%;
+  border-radius: 50%;
+  padding: 10px;
+  background: var(--main-background);
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  background: #333;
+}
+
+.arrow.to-left {
+  transform: rotate(45deg);
+  left: 10px;
+}
+
+.arrow.to-right {
+  transform: rotate(-135deg);
+  right: 10px;
+}
+
+.arrow-inner {
+  padding-right: 20px;
+  padding-top: 20px;
+  border-bottom: 5px solid #FFFFFF;
+  border-left: 5px solid #FFFFFF;
+  transform: translate(2px, -2px);
+}
+
 .roadmap-wrapper {
   position: relative;
   max-width: 1500px;
   margin: 0 auto 0;
   padding: 160px 0 0;
 }
+
 .background-mountains {
   position: absolute;
   left: 0;
@@ -130,16 +276,19 @@
   height: 100%;
   z-index: 150;
 }
+
 .roadmap-wrapper .section-header {
   position: relative;
   z-index: 200;
   padding-bottom: 40px;
 }
+
 .rows {
   position: relative;
   z-index: 200;
   width: 100%;
 }
+
 .row {
   display: flex;
   flex-direction: column;
@@ -147,6 +296,7 @@
   align-items: center;
   width: 100%;
 }
+
 .first,
 .second {
   display: flex;
@@ -155,9 +305,11 @@
   align-items: center;
   gap: 30px;
 }
+
 .first {
   margin-bottom: -50px;
 }
+
 .separators {
   position: relative;
   display: flex;
@@ -165,6 +317,7 @@
   align-items: flex-end;
   margin-top: 40px;
 }
+
 .blue-line {
   position: absolute;
   left: 0;
@@ -173,11 +326,13 @@
   width: 100%;
   background: #26E0FF;
 }
+
 .pokemon {
   height: 250px;
   max-width: 25%;
   object-fit: contain;
 }
+
 .text {
   position: relative;
   width: 25%;
@@ -188,24 +343,29 @@
   color: #ffffff;
   font-size: 16px;
 }
+
 .size-1 {
   height: 89px;
   margin-bottom: -2px;
   margin-left: 100px;
 }
+
 .size-2 {
   height: 115px;
   margin-bottom: -3px;
 }
+
 .size-3 {
   height: 128px;
   margin-bottom: -3px;
 }
+
 .size-4 {
   height: 150px;
   margin-bottom: -4px;
   margin-right: 80px;
 }
+
 .badge {
   position: absolute;
   left: -30px;
@@ -218,104 +378,51 @@
   padding: 10px 70px 10px 15px;
   border-radius: 0 15px 15px 15px;
 }
+
+.swiper-container-mobile {
+  position: relative;
+  display: none;
+  z-index: 300;
+}
+
 @media screen and (max-width: 1480px) {
   .roadmap-wrapper {
     padding-left: 50px;
     padding-right: 50px;
     box-sizing: border-box;
   }
+
   .badge {
     font-size: 30px;
     padding-right: 30px;
   }
 }
+
 @media screen and (max-width: 1170px) {
   .roadmap-wrapper {
     padding-top: 40px;
   }
+
   .second {
     margin-top: 30px;
   }
+
   .text {
     font-size: 14px;
   }
+
   .text-item {
     margin: 0;
   }
 }
+
 @media screen and (max-width: 1070px) {
-  .separators {
-    justify-content: space-between;
+  .swiper-container-mobile {
+    display: block;
   }
-  .text {
-    width: 35%;
-  }
-  .pokemon {
-    max-width: 15%;
-  }
-}
-@media screen and (max-width: 878px) {
-.size-1 {
-  height: 55px;
-}
-.size-2 {
-  height: 70px;
-}
-.size-3 {
-  height: 85px;
-}
-.size-4 {
-  height: 100px;
-}
-.separators {
-  margin: 20px 0;
-}
-.badge {
-  font-size: 20px;
-  left: -15px;
-  top: -15px;
-}
-}
-@media screen and (max-width: 878px) {
-  .badge {
-    font-size: 16px;
-    padding: 10px;
-  }
-  .text {
-    padding: 30px 10px 10px;
-    font-size: 12px;
-  }
-  .pokemon {
-    margin-left: -10px;
-    margin-right: -10px;
-  }
-  .size-1 {
-    margin-left: 10px;
-  }
-  .size-4 {
-    margin-right: 10px;
-  }
-}
-@media screen and (max-width: 588px) {
-  .badge {
-    font-size: 14px;
-  }
-  .pokemon {
-    margin-left: -20px;
-    margin-right: -20px;
-  }
-  .text {
-    border-radius: 15px;
-    font-size: 10px;
-  }
-}
-@media screen and (max-width: 390px) {
-  .text {
-    font-size: 8px;
-  }
-  .badge {
-    font-size: 12px;
-    padding: 4px;
+
+  .rows {
+    display: none;
   }
 }
 </style>
