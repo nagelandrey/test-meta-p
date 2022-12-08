@@ -4,7 +4,7 @@
     class="buy-wrapper"
   >
     <h2 class="section-header">
-      Где купить
+      {{ $t('section.buy.header') }}
     </h2>
     <div class="buy-links">
       <a

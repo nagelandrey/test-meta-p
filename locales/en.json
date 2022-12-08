@@ -52,6 +52,9 @@
                 "text": "A cryptocurrency movement dedicated to the legendary multiverse. Pokemon Token is a friendly community where everyone is welcome"
             }
         },
+        "buy": {
+            "header": "Where to Buy"
+        },
         "ecosystem": {
             "header": "Ecosystem",
             "game": {
