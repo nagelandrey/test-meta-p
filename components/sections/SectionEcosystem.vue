@@ -309,4 +309,13 @@
     min-height: 450px;
   }
 }
+@media screen and (max-width: 1000px) {
+  .pokemon-wrapper {
+    display: none;
+  }
+  .card-content {
+    padding-bottom: 50px;
+    min-height: auto;
+  }
+}
 </style>

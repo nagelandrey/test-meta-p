@@ -49,9 +49,9 @@ import {ref, watch} from "vue";
 import {computed} from "vue";
 import {ITimerParams} from "~/types/ITimerParams";
 
-const endDateTimeString = '2022-12-20T00:00:00.000+00:00';
+const endDateTimeString = '2022-12-18T19:00:00.000+00:00';
 
-const timeZoneOffset = 0
+const timeZoneOffset = 3
 const endTime = ref(Date.parse(endDateTimeString) / 1000);
 const startTime = Date.parse(new Date().toUTCString()) / 1000;
 

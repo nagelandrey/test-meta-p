@@ -53,20 +53,20 @@
             }
         },
         "ecosystem": {
-            "header": "Экосистема",
+            "header": "Ecosystem",
             "game": {
-                "header": "Игры:",
-                "first": "Play-to-earn проект Pokemon Fighters",
-                "second": "Игровая метавселенная Pokemon Adventure"
+                "header": "Games:",
+                "first": "Play-to-earn project Pokemon Fighters",
+                "second": "Pokemon Adventure metagame universe"
             },
             "community": {
-                "header": "Сообщество:",
-                "first": "Инкубаторные программы ",
-                "second": "Благотворительность",
-                "third": "Фандрайзеры"
+                "header": "Community:",
+                "first": "Incubator programs",
+                "second": "Charity",
+                "third": "Fundraising"
             },
             "marketplaces": {
-                "header": "Маркетплейсы:",
+                "header": "Marketplaces:",
                 "first": "PokemonVerse - NFTs",
                 "second": "PokemonSwap - Dex"
             }

@@ -118,7 +118,7 @@ $pokeball-animation-margin: 45px;
 @media screen and (max-width: 1550px) {
 
   .logo {
-    max-width: 750px;
+    max-width: 700px;
   }
   .home-wrapper .pokeball {
     --top-offset: 150px;
@@ -152,7 +152,7 @@ $pokeball-animation-margin: 45px;
     width: 100%;
   }
   .logo {
-    width: 100%;
+    width: 90%;
     height: auto;
     margin: 20px -30px 10px -30px;
   }

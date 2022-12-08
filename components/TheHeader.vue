@@ -14,14 +14,6 @@
       <ul class="navigation-items">
         <li class="navigation-item">
           <a
-            href="#"
-            class="link"
-          >
-            {{ $t('menu.main') }}
-          </a>
-        </li>
-        <li class="navigation-item">
-          <a
             href="#ecosystem"
             class="link"
           >
@@ -43,22 +35,6 @@
             target="_blank"
           >
             {{ $t('menu.whitepaper') }}
-          </a>
-        </li>
-        <li class="navigation-item">
-          <a
-            href="#buy"
-            class="link"
-          >
-            {{ $t('menu.buy') }}
-          </a>
-        </li>
-        <li class="navigation-item">
-          <a
-            href="#faq"
-            class="link"
-          >
-            {{ $t('menu.faq') }}
           </a>
         </li>
         <li class="navigation-item social-links">
@@ -99,12 +75,6 @@
           class="burger-menu"
         >
           <a
-            href="#"
-            class="link"
-          >
-            {{ $t('menu.main') }}
-          </a>
-          <a
             href="#ecosystem"
             class="link"
           >
@@ -121,12 +91,6 @@
             class="link"
           >
             {{ $t('menu.whitepaper') }}
-          </a>
-          <a
-            href="#faq"
-            class="link"
-          >
-            {{ $t('menu.faq') }}
           </a>
         </div>
       </ul>

@@ -63,7 +63,21 @@
   height: var(--background-banner-size);
   object-fit: contain;
 }
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1600px) {
+.moon-text {
+  margin-right: -200px;
+}
+.moon-text:last-child {
+  margin-right: -200px;
+}
+}
+@media screen and (max-width: 1450px) {
+.moon-text {
+  margin-right: -50px;
+}
+.moon-text:last-child {
+  margin-right: -50px;
+}
   .moon-wrapper {
   --background-banner-size: 300px;
   }
@@ -87,6 +101,7 @@
 }
 .moon-text:last-child {
   font-size: 40px;
+  margin-right: 50px;
 }
 .spacer {
   display: none;

@@ -1,21 +1,45 @@
-<script setup lang="ts">
-// core version + navigation, pagination modules:
-
-import {Navigation} from 'swiper';
-import {Swiper, SwiperSlide, useSwiper} from 'swiper/vue';
-// import Swiper and modules styles
+<script setup>
+import {Swiper, SwiperSlide} from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { onMounted, onUnmounted, ref } from 'vue';
 
-const currentSwiper = useSwiper();
+const swiperRef = ref()
+const numberOfSlidesPerView = ref(2)
 
 const toLeft = () => {
-  currentSwiper.value.slidePrev()
+  swiperRef.value.slidePrev()
 }
 
 const toRight = () => {
-  currentSwiper.value.slideNext()
+  swiperRef.value.slideNext()
 }
+
+const onSwiper = (newSwiper) => {
+  if (!process.server) {
+    swiperRef.value = newSwiper
+  }
+}
+
+const onResize = () => {
+  if (process.server) {
+    return;
+  }
+  if (document.body.clientWidth < 480) {
+    numberOfSlidesPerView.value = 1
+  }
+  else {
+    numberOfSlidesPerView.value = 2
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('resize', onResize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', onResize)
+})
 </script>
 
 <template>
@@ -33,8 +57,9 @@ const toRight = () => {
     </h2>
     <div class="swiper-container-mobile">
       <swiper
-        :slides-per-view="2"
-        :space-between="50"
+        :slides-per-view="numberOfSlidesPerView"
+        :space-between="5"
+        @swiper="onSwiper"
       >
         <swiper-slide>
           <div class="slide-container-mobile">
@@ -118,9 +143,19 @@ const toRight = () => {
             class="pokemon"
           >
         </swiper-slide>
+        <button
+          class="arrow to-left"
+          @click="toLeft"
+        >
+          <div class="arrow-inner" />
+        </button>
+        <button
+          class="arrow to-right"
+          @click="toRight"
+        >
+          <div class="arrow-inner" />
+        </button>
       </swiper>
-      <button @click="toLeft" class="arrow to-left"><div class="arrow-inner"></div></button>
-      <button @click="toRight" class="arrow to-right"><div class="arrow-inner"></div></button>
     </div>
 
     <div class="rows">
@@ -231,6 +266,7 @@ const toRight = () => {
 .arrow {
   position: absolute;
   top: 50%;
+  z-index: 600;
   border-radius: 50%;
   padding: 10px;
   background: var(--main-background);
@@ -259,6 +295,7 @@ const toRight = () => {
   border-bottom: 5px solid #FFFFFF;
   border-left: 5px solid #FFFFFF;
   transform: translate(2px, -2px);
+  pointer-events: none;
 }
 
 .roadmap-wrapper {
@@ -301,7 +338,7 @@ const toRight = () => {
 .second {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   gap: 30px;
 }
@@ -419,10 +456,46 @@ const toRight = () => {
 @media screen and (max-width: 1070px) {
   .swiper-container-mobile {
     display: block;
+    text-align: center;
+    box-sizing: border-box;
   }
 
   .rows {
     display: none;
+  }
+  .pokemon,
+  .text {
+    width: auto;
+    max-width: 80%;
+  }
+  .text {
+    margin: 30px 0 20px 30px;
+  }
+  .text-item {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 800px) {
+  .badge {
+    font-size: 20px;
+    left: -15px;
+    top: -15px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  .text {
+    padding: 30px 10px 10px;
+    border-radius: 15px;
+  }
+  .pokemon,
+  .text {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .roadmap-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
   }
 }
 </style>
